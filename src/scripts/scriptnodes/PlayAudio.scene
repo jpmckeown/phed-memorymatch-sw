@@ -1,0 +1,50 @@
+{
+    "id": "510ec082-71ea-4063-b7d7-38160c6e3184",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "importFileExtension": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1280,
+        "borderHeight": 720
+    },
+    "displayList": [
+        {
+            "type": "ScriptNode",
+            "id": "31733493-d2a0-43de-87e9-cb2a2667dd6d",
+            "label": "scriptnode_1"
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "prefabProperties": [
+        {
+            "name": "key",
+            "label": "Audio Key",
+            "tooltip": "The Audio key from the assets file.",
+            "defValue": "",
+            "customDefinition": false,
+            "type": {
+                "id": "audio-key"
+            }
+        },
+        {
+            "name": "loop",
+            "label": "Loop Audio",
+            "tooltip": "Play audio on a loop.",
+            "defValue": false,
+            "customDefinition": false,
+            "type": {
+                "id": "boolean"
+            }
+        }
+    ]
+}

@@ -5,6 +5,7 @@
 
 import ScriptNode from "../../phaserjs_editor_scripts_base/ScriptNode.js";
 /* START-USER-IMPORTS */
+import {MemoryMatch} from "./lib/memory-match.js"
 /* END-USER-IMPORTS */
 
 export default class GamePlay extends ScriptNode {
@@ -20,7 +21,13 @@ export default class GamePlay extends ScriptNode {
 	/* START-USER-CODE */
 
 	// Write your code here.
-
+   memoryMatch;
+   awake() {
+      console.log('awake');
+      this.memoryMatch = new MemoryMatch({
+         cards: [],
+      });
+   }
 	/* END-USER-CODE */
 }
 

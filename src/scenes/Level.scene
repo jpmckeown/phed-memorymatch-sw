@@ -15,7 +15,14 @@
         {
             "prefabId": "8d8477f2-b4a2-45b9-ae8c-89324774eea5",
             "id": "960debb0-b8a2-44bc-978d-73650f7206e2",
-            "label": "backgroundPrefab"
+            "label": "backgroundPrefab",
+            "list": [
+                {
+                    "prefabId": "baf62999-5c89-43f5-a659-1abf162fda30",
+                    "id": "ba8d23c5-4645-46d8-b582-f9f81ff1d019",
+                    "label": "gamePlay"
+                }
+            ]
         },
         {
             "prefabId": "4ba8632f-f671-4731-9462-06ad46fd3fd1",
@@ -35,9 +42,11 @@
             "id": "6e442ef7-7728-4413-8b68-c93aa53224e0",
             "unlock": [
                 "x",
-                "y"
+                "y",
+                "cardFrontTextureConfig"
             ],
             "label": "cardPrefab_2",
+            "cardFrontTextureConfig": "{\"key\":\"spritesheet\",\"frame\":\"Cadle.png\"}",
             "x": 410,
             "y": 127
         }

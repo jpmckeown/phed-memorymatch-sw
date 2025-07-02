@@ -4,6 +4,7 @@
 /* START OF COMPILED CODE */
 
 import BackgroundPrefab from "../prefabs/BackgroundPrefab.js";
+import CardPrefab from "../prefabs/CardPrefab.js";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -23,6 +24,10 @@ export default class Level extends Phaser.Scene {
 		// backgroundPrefab
 		const backgroundPrefab = new BackgroundPrefab(this);
 		this.add.existing(backgroundPrefab);
+
+		// cardPrefab
+		const cardPrefab = new CardPrefab(this, 216, 127);
+		this.add.existing(cardPrefab);
 
 		this.events.emit("scene-awake");
 	}

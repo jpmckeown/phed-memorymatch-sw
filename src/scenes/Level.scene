@@ -16,6 +16,17 @@
             "prefabId": "8d8477f2-b4a2-45b9-ae8c-89324774eea5",
             "id": "960debb0-b8a2-44bc-978d-73650f7206e2",
             "label": "backgroundPrefab"
+        },
+        {
+            "prefabId": "4ba8632f-f671-4731-9462-06ad46fd3fd1",
+            "id": "96bb1be1-893d-4554-80aa-62e99063213e",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "cardPrefab",
+            "x": 216,
+            "y": 127
         }
     ],
     "plainObjects": [],

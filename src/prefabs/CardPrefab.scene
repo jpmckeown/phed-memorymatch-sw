@@ -39,6 +39,16 @@
             "type": {
                 "id": "texture-config"
             }
+        },
+        {
+            "name": "cardBackTextureConfig",
+            "label": "card Back Texture Config",
+            "tooltip": "",
+            "defValue": "{\"key\":\"spritesheet\",\"frame\":\"Verse.png\"}",
+            "customDefinition": false,
+            "type": {
+                "id": "texture-config"
+            }
         }
     ]
 }

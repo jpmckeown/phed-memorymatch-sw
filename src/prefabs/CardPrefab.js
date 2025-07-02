@@ -16,6 +16,11 @@ export default class CardPrefab extends Phaser.GameObjects.Image {
 		/* END-USER-CTR-CODE */
 	}
 
+	/** @type {{key:string,frame?:string|number}} */
+	cardFrontTextureConfig;
+	/** @type {{key:string,frame?:string|number}} */
+	cardBackTextureConfig = {"key":"spritesheet","frame":"Verse.png"};
+
 	/* START-USER-CODE */
 
 	// Write your code here.

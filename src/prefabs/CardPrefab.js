@@ -16,6 +16,7 @@ export default class CardPrefab extends Phaser.GameObjects.Image {
 		/* START-USER-CTR-CODE */
 		this.on(Phaser.Input.Events.POINTER_DOWN, () => {
          console.log('clicked card')
+         this.isFlipped = !this.isFlipped;
          this.flipTimeLine.play(true);
       });
       this.flipTimeLine = this.scene.add.timeline([
@@ -26,6 +27,13 @@ export default class CardPrefab extends Phaser.GameObjects.Image {
                scaleY: 1.2,
                duration: 100,
                ease: Phaser.Math.Easing.Linear
+            }
+         },
+         {
+            at: 100,
+            run: () => {
+               const textureConfig = this.isFlipped ? this.cardFrontTextureConfig : this.cardBackTextureConfig;
+               this.setTexture(textureConfig.key, textureConfig.frame);
             }
          },
          {
@@ -42,7 +50,7 @@ export default class CardPrefab extends Phaser.GameObjects.Image {
 		/* END-USER-CTR-CODE */
 	}
 
-	/** @type {{key:string,frame?:string|number}} */
+	/** @type {{key:string,frame?:string|number}} */ 
 	cardFrontTextureConfig;
 	/** @type {{key:string,frame?:string|number}} */
 	cardBackTextureConfig = {"key":"spritesheet","frame":"Verse.png"};
@@ -50,7 +58,9 @@ export default class CardPrefab extends Phaser.GameObjects.Image {
 	/* START-USER-CODE */
 
 	// Write your code here.
+   /** @type {Phaser.Time.Timeline}  */
    flipTimeLine;
+   isFlipped = false;
 
 	/* END-USER-CODE */
 }

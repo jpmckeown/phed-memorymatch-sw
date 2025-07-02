@@ -22,9 +22,11 @@
             "id": "96bb1be1-893d-4554-80aa-62e99063213e",
             "unlock": [
                 "x",
-                "y"
+                "y",
+                "cardFrontTextureConfig"
             ],
             "label": "cardPrefab",
+            "cardFrontTextureConfig": "{\"key\":\"spritesheet\",\"frame\":\"Bat.png\"}",
             "x": 216,
             "y": 127
         }

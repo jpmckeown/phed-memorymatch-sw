@@ -16,6 +16,9 @@
             "type": "Image",
             "id": "aa6d094a-6526-410a-9ca3-d2357e7d4400",
             "label": "verse_png",
+            "hitArea.shape": "RECTANGLE",
+            "hitArea.width": 144,
+            "hitArea.height": 144,
             "texture": {
                 "key": "spritesheet",
                 "frame": "Verse.png"

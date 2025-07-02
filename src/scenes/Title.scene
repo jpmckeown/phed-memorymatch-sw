@@ -13,14 +13,51 @@
     },
     "displayList": [
         {
-            "type": "Image",
+            "prefabId": "8d8477f2-b4a2-45b9-ae8c-89324774eea5",
             "id": "5033647e-281d-4972-9ce9-51fffbdd2d5b",
-            "label": "background_1",
+            "label": "background"
+        },
+        {
+            "type": "Image",
+            "id": "8f0c610c-5c50-463b-8c57-1ea0d2944896",
+            "label": "title",
             "texture": {
-                "key": "background_1"
+                "key": "title"
             },
-            "x": 282,
-            "y": 133
+            "x": 640,
+            "y": 246
+        },
+        {
+            "type": "Image",
+            "id": "1ac82e3f-8698-4655-992c-8e47500ce471",
+            "label": "clickToPlay",
+            "texture": {
+                "key": "clickToPlay"
+            },
+            "x": 640,
+            "y": 521,
+            "list": [
+                {
+                    "prefabId": "3d0f9437-ede2-4a64-86fb-d4956574496b",
+                    "id": "b7c33b6f-471f-4652-a49b-2d656713527a",
+                    "unlock": [
+                        "autoExecute"
+                    ],
+                    "label": "sceneClickHandler",
+                    "autoExecute": true,
+                    "list": [
+                        {
+                            "prefabId": "f737f7db-81b4-4411-8b05-4b9dcdbc91f1",
+                            "id": "3bb5b091-15b0-4d20-a157-8bc5c2e03049",
+                            "unlock": [
+                                "sceneName"
+                            ],
+                            "label": "startScene",
+                            "sceneName": "Level"
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "plainObjects": [],

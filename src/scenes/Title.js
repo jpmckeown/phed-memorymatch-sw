@@ -3,6 +3,9 @@
 
 /* START OF COMPILED CODE */
 
+import BackgroundPrefab from "../prefabs/BackgroundPrefab.js";
+import SceneClickHandler from "../scripts/scriptnodes/SceneClickHandler.js";
+import StartScene from "../scripts/scriptnodes/StartScene.js";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -19,8 +22,27 @@ export default class Title extends Phaser.Scene {
 	/** @returns {void} */
 	editorCreate() {
 
-		// background_1
-		this.add.image(282, 133, "background_1");
+		// background
+		const background = new BackgroundPrefab(this);
+		this.add.existing(background);
+
+		// title
+		this.add.image(640, 246, "title");
+
+		// clickToPlay
+		const clickToPlay = this.add.image(640, 521, "clickToPlay");
+
+		// sceneClickHandler
+		const sceneClickHandler = new SceneClickHandler(clickToPlay);
+
+		// startScene
+		const startScene = new StartScene(sceneClickHandler);
+
+		// sceneClickHandler (prefab fields)
+		sceneClickHandler.autoExecute = true;
+
+		// startScene (prefab fields)
+		startScene.sceneName = "Level";
 
 		this.events.emit("scene-awake");
 	}

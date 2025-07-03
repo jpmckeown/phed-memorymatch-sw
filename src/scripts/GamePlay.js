@@ -37,7 +37,7 @@ export default class GamePlay extends ScriptNode {
          onMatchCallback: (firstIndex, secondIndex) => { this.onMatchCallback(firstIndex, secondIndex); },
          onMismatchCallback: (firstIndex, secondIndex) => { this.onMismatchCallback(firstIndex, secondIndex); },
          onGameOverCallback: () => { this.onGameOverCallback(); },
-         howToCheckForMatch: (firstCard , secondCard) => { this.checkForMatch(firstCard, secondCard); },
+         howToCheckForMatch: (firstCard , secondCard) => { return this.checkForMatch(firstCard, secondCard); },
          howToShuffle: (cards) => {}
       });
        
@@ -49,8 +49,8 @@ export default class GamePlay extends ScriptNode {
    }
 
    checkForMatch(firstCard, secondCard) {
-      isMatch = firstCard.cardFrontTextureConfig.frame === secondCard.cardFrontTextureConfig.frame;
-      return isMatch;
+      //isMatch = firstCard.cardFrontTextureConfig.frame === secondCard.cardFrontTextureConfig.frame;
+      return firstCard.cardFrontTextureConfig.frame === secondCard.cardFrontTextureConfig.frame;
    }
 
    onCardFlipCallback(cardIndex) { 

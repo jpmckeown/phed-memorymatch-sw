@@ -48,9 +48,11 @@
             "id": "763b665a-7889-4a16-9df3-ba42d931e35a",
             "unlock": [
                 "x",
-                "y"
+                "y",
+                "cardFrontTextureConfig"
             ],
             "label": "cardPrefab_3",
+            "cardFrontTextureConfig": "{\"key\":\"spritesheet\",\"frame\":\"Bat.png\"}",
             "x": 600,
             "y": 127
         },
@@ -59,9 +61,11 @@
             "id": "2186bf9f-6bde-4890-a8c9-49cddba97965",
             "unlock": [
                 "x",
-                "y"
+                "y",
+                "cardFrontTextureConfig"
             ],
             "label": "cardPrefab_4",
+            "cardFrontTextureConfig": "{\"key\":\"spritesheet\",\"frame\":\"Cadle.png\"}",
             "x": 800,
             "y": 127
         },
@@ -88,7 +92,9 @@
             "label": "cards",
             "objectIds": [
                 "6e442ef7-7728-4413-8b68-c93aa53224e0",
-                "96bb1be1-893d-4554-80aa-62e99063213e"
+                "96bb1be1-893d-4554-80aa-62e99063213e",
+                "763b665a-7889-4a16-9df3-ba42d931e35a",
+                "2186bf9f-6bde-4890-a8c9-49cddba97965"
             ]
         }
     ]

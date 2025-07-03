@@ -37,14 +37,28 @@ export default class Level extends Phaser.Scene {
 		const cardPrefab_2 = new CardPrefab(this, 410, 127);
 		this.add.existing(cardPrefab_2);
 
+		// gamePlay
+		const gamePlay = new GamePlay(this);
+
+		// lists
+		const cards = [cardPrefab_2, cardPrefab_1];
+
 		// cardPrefab_1 (prefab fields)
 		cardPrefab_1.cardFrontTextureConfig = {"key":"spritesheet","frame":"Bat.png"};
 
 		// cardPrefab_2 (prefab fields)
 		cardPrefab_2.cardFrontTextureConfig = {"key":"spritesheet","frame":"Cadle.png"};
 
+		// gamePlay (prefab fields)
+		gamePlay.cards = cards;
+
+		this.cards = cards;
+
 		this.events.emit("scene-awake");
 	}
+
+	/** @type {CardPrefab[]} */
+	cards;
 
 	/* START-USER-CODE */
 

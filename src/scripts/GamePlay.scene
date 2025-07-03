@@ -24,5 +24,18 @@
         "url": "https://phaser.io/editor",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "cards",
+            "label": "Cards",
+            "tooltip": "List of card game objects",
+            "defValue": "[]",
+            "customDefinition": false,
+            "type": {
+                "id": "object-var",
+                "expressionType": "CardPrefab[]"
+            }
+        }
+    ]
 }

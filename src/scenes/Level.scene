@@ -49,6 +49,15 @@
             "cardFrontTextureConfig": "{\"key\":\"spritesheet\",\"frame\":\"Cadle.png\"}",
             "x": 410,
             "y": 127
+        },
+        {
+            "prefabId": "baf62999-5c89-43f5-a659-1abf162fda30",
+            "id": "7fc16294-6dbf-48f6-a330-06d0f988f52b",
+            "unlock": [
+                "cards"
+            ],
+            "label": "gamePlay",
+            "cards": "cards"
         }
     ],
     "plainObjects": [],
@@ -57,5 +66,15 @@
         "url": "https://phaser.io/editor",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
-    }
+    },
+    "lists": [
+        {
+            "id": "3f295bbc-e51d-4433-bd8c-ea881607fb1e",
+            "label": "cards",
+            "objectIds": [
+                "6e442ef7-7728-4413-8b68-c93aa53224e0",
+                "96bb1be1-893d-4554-80aa-62e99063213e"
+            ]
+        }
+    ]
 }

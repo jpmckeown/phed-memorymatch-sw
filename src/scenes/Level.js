@@ -4,8 +4,8 @@
 /* START OF COMPILED CODE */
 
 import BackgroundPrefab from "../prefabs/BackgroundPrefab.js";
-import GamePlay from "../scripts/GamePlay.js";
 import CardPrefab from "../prefabs/CardPrefab.js";
+import GamePlay from "../scripts/GamePlay.js";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -26,16 +26,21 @@ export default class Level extends Phaser.Scene {
 		const backgroundPrefab = new BackgroundPrefab(this);
 		this.add.existing(backgroundPrefab);
 
-		// gamePlay
-		new GamePlay(backgroundPrefab);
-
 		// cardPrefab_1
-		const cardPrefab_1 = new CardPrefab(this, 216, 127);
+		const cardPrefab_1 = new CardPrefab(this, 200, 127);
 		this.add.existing(cardPrefab_1);
 
 		// cardPrefab_2
-		const cardPrefab_2 = new CardPrefab(this, 410, 127);
+		const cardPrefab_2 = new CardPrefab(this, 400, 127);
 		this.add.existing(cardPrefab_2);
+
+		// cardPrefab_3
+		const cardPrefab_3 = new CardPrefab(this, 600, 127);
+		this.add.existing(cardPrefab_3);
+
+		// cardPrefab_4
+		const cardPrefab_4 = new CardPrefab(this, 800, 127);
+		this.add.existing(cardPrefab_4);
 
 		// gamePlay
 		const gamePlay = new GamePlay(this);

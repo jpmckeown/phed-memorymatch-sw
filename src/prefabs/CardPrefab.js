@@ -15,9 +15,8 @@ export default class CardPrefab extends Phaser.GameObjects.Image {
 
 		/* START-USER-CTR-CODE */
 		this.on(Phaser.Input.Events.POINTER_DOWN, () => {
-         console.log('clicked card')
-         this.isFlipped = !this.isFlipped;
-         this.flipTimeLine.play(true);
+         console.log('clicked card & event emitted')
+         this.scene.events.emit('card-clicked', (this))
       });
       this.flipTimeLine = this.scene.add.timeline([
          {
@@ -61,6 +60,11 @@ export default class CardPrefab extends Phaser.GameObjects.Image {
    /** @type {Phaser.Time.Timeline}  */
    flipTimeLine;
    isFlipped = false;
+
+   flip() {
+      this.isFlipped = !this.isFlipped;
+      this.flipTimeLine.play(true);
+   }
 
 	/* END-USER-CODE */
 }

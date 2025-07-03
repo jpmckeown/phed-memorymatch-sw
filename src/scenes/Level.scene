@@ -15,14 +15,7 @@
         {
             "prefabId": "8d8477f2-b4a2-45b9-ae8c-89324774eea5",
             "id": "960debb0-b8a2-44bc-978d-73650f7206e2",
-            "label": "backgroundPrefab",
-            "list": [
-                {
-                    "prefabId": "baf62999-5c89-43f5-a659-1abf162fda30",
-                    "id": "ba8d23c5-4645-46d8-b582-f9f81ff1d019",
-                    "label": "gamePlay"
-                }
-            ]
+            "label": "backgroundPrefab"
         },
         {
             "prefabId": "4ba8632f-f671-4731-9462-06ad46fd3fd1",
@@ -34,7 +27,7 @@
             ],
             "label": "cardPrefab_1",
             "cardFrontTextureConfig": "{\"key\":\"spritesheet\",\"frame\":\"Bat.png\"}",
-            "x": 216,
+            "x": 200,
             "y": 127
         },
         {
@@ -47,7 +40,29 @@
             ],
             "label": "cardPrefab_2",
             "cardFrontTextureConfig": "{\"key\":\"spritesheet\",\"frame\":\"Cadle.png\"}",
-            "x": 410,
+            "x": 400,
+            "y": 127
+        },
+        {
+            "prefabId": "4ba8632f-f671-4731-9462-06ad46fd3fd1",
+            "id": "763b665a-7889-4a16-9df3-ba42d931e35a",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "cardPrefab_3",
+            "x": 600,
+            "y": 127
+        },
+        {
+            "prefabId": "4ba8632f-f671-4731-9462-06ad46fd3fd1",
+            "id": "2186bf9f-6bde-4890-a8c9-49cddba97965",
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "label": "cardPrefab_4",
+            "x": 800,
             "y": 127
         },
         {

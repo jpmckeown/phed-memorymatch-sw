@@ -26,7 +26,11 @@ export default class GamePlay extends ScriptNode {
 	// Write your code here.
    memoryMatch;
    awake() {
-      console.log('awake');
+      console.log('awake', this.parent);
+      this.cards.forEach((card, index) => {
+         card.name = index;
+      });
+
       this.memoryMatch = new MemoryMatch({
          cards: this.cards,
          onCardFlipCallback: (cardIndex) => { this.onCardFlipCallback(cardIndex);  },
@@ -36,21 +40,34 @@ export default class GamePlay extends ScriptNode {
          howToCheckForMatch: (firstCard , secondCard) => { this.checkForMatch(firstCard, secondCard); },
          howToShuffle: (cards) => {}
       });
-      console.log(this.memoryMatch.cards)
+       
+      this.scene.events.on('card-clicked', (card) => {
+         console.log(card);
+         this.memoryMatch.flipCard(card.name);
+      })
+      //console.log(this.memoryMatch.cards)
    }
 
    checkForMatch(firstCard, secondCard) {
-      //
+      isMatch = firstCard.cardFrontTextureConfig.frame === secondCard.cardFrontTextureConfig.frame;
+      return isMatch;
    }
 
    onCardFlipCallback(cardIndex) { 
-      console.log(`Card flipped: ${cardIndex}`); 
+      console.log(`Card flipped: ${cardIndex}`);
+      this.cards[cardIndex].flip();
    }
+
    onMatchCallback(firstIndex, secondIndex) { 
       console.log(`Match found: ${firstIndex}, ${secondIndex}`); 
    }
+
    onMismatchCallback(firstIndex, secondIndex) {
       console.log(`Mismatch: ${firstIndex}, ${secondIndex}`);
+      this.scene.time.delayedCall(1000, () => {
+         this.cards[firstIndex].flip();
+         this.cards[secondIndex].flip();
+      });
    }
    onGameOverCallback() {
       console.log('Game Over! All cards matched!'); 

@@ -26,53 +26,56 @@ export default class Level extends Phaser.Scene {
 		const backgroundPrefab = new BackgroundPrefab(this);
 		this.add.existing(backgroundPrefab);
 
+		// cardContainer
+		const cardContainer = this.add.container(640, 360);
+
 		// cardPrefab_1
-		const cardPrefab_1 = new CardPrefab(this, 147, 133);
-		this.add.existing(cardPrefab_1);
+		const cardPrefab_1 = new CardPrefab(this, 0, 0);
+		cardContainer.add(cardPrefab_1);
 
 		// cardPrefab_2
-		const cardPrefab_2 = new CardPrefab(this, 547, 493);
-		this.add.existing(cardPrefab_2);
+		const cardPrefab_2 = new CardPrefab(this, 0, 0);
+		cardContainer.add(cardPrefab_2);
 
 		// cardPrefab_3
-		const cardPrefab_3 = new CardPrefab(this, 547, 133);
-		this.add.existing(cardPrefab_3);
+		const cardPrefab_3 = new CardPrefab(this, 0, 0);
+		cardContainer.add(cardPrefab_3);
 
 		// cardPrefab_4
-		const cardPrefab_4 = new CardPrefab(this, 147, 493);
-		this.add.existing(cardPrefab_4);
+		const cardPrefab_4 = new CardPrefab(this, 0, 0);
+		cardContainer.add(cardPrefab_4);
 
 		// cardPrefab_5
-		const cardPrefab_5 = new CardPrefab(this, 747, 493);
-		this.add.existing(cardPrefab_5);
+		const cardPrefab_5 = new CardPrefab(this, 0, 0);
+		cardContainer.add(cardPrefab_5);
 
 		// cardPrefab_6
-		const cardPrefab_6 = new CardPrefab(this, 347, 493);
-		this.add.existing(cardPrefab_6);
+		const cardPrefab_6 = new CardPrefab(this, 0, 0);
+		cardContainer.add(cardPrefab_6);
 
 		// cardPrefab_12
-		const cardPrefab_12 = new CardPrefab(this, 547, 313);
-		this.add.existing(cardPrefab_12);
+		const cardPrefab_12 = new CardPrefab(this, 0, 0);
+		cardContainer.add(cardPrefab_12);
 
 		// cardPrefab_7
-		const cardPrefab_7 = new CardPrefab(this, 347, 133);
-		this.add.existing(cardPrefab_7);
+		const cardPrefab_7 = new CardPrefab(this, 0, 0);
+		cardContainer.add(cardPrefab_7);
 
 		// cardPrefab_8
-		const cardPrefab_8 = new CardPrefab(this, 747, 313);
-		this.add.existing(cardPrefab_8);
+		const cardPrefab_8 = new CardPrefab(this, 0, 0);
+		cardContainer.add(cardPrefab_8);
 
 		// cardPrefab_9
-		const cardPrefab_9 = new CardPrefab(this, 747, 133);
-		this.add.existing(cardPrefab_9);
+		const cardPrefab_9 = new CardPrefab(this, 0, 0);
+		cardContainer.add(cardPrefab_9);
 
 		// cardPrefab_10
-		const cardPrefab_10 = new CardPrefab(this, 147, 313);
-		this.add.existing(cardPrefab_10);
+		const cardPrefab_10 = new CardPrefab(this, 0, 0);
+		cardContainer.add(cardPrefab_10);
 
 		// cardPrefab_11
-		const cardPrefab_11 = new CardPrefab(this, 347, 313);
-		this.add.existing(cardPrefab_11);
+		const cardPrefab_11 = new CardPrefab(this, 0, 0);
+		cardContainer.add(cardPrefab_11);
 
 		// gamePlay
 		const gamePlay = new GamePlay(this);

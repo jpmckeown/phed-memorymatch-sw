@@ -27,26 +27,58 @@ export default class Level extends Phaser.Scene {
 		this.add.existing(backgroundPrefab);
 
 		// cardPrefab_1
-		const cardPrefab_1 = new CardPrefab(this, 200, 127);
+		const cardPrefab_1 = new CardPrefab(this, 147, 133);
 		this.add.existing(cardPrefab_1);
 
 		// cardPrefab_2
-		const cardPrefab_2 = new CardPrefab(this, 400, 127);
+		const cardPrefab_2 = new CardPrefab(this, 547, 493);
 		this.add.existing(cardPrefab_2);
 
 		// cardPrefab_3
-		const cardPrefab_3 = new CardPrefab(this, 600, 127);
+		const cardPrefab_3 = new CardPrefab(this, 547, 133);
 		this.add.existing(cardPrefab_3);
 
 		// cardPrefab_4
-		const cardPrefab_4 = new CardPrefab(this, 800, 127);
+		const cardPrefab_4 = new CardPrefab(this, 147, 493);
 		this.add.existing(cardPrefab_4);
+
+		// cardPrefab_5
+		const cardPrefab_5 = new CardPrefab(this, 747, 493);
+		this.add.existing(cardPrefab_5);
+
+		// cardPrefab_6
+		const cardPrefab_6 = new CardPrefab(this, 347, 493);
+		this.add.existing(cardPrefab_6);
+
+		// cardPrefab_12
+		const cardPrefab_12 = new CardPrefab(this, 547, 313);
+		this.add.existing(cardPrefab_12);
+
+		// cardPrefab_7
+		const cardPrefab_7 = new CardPrefab(this, 347, 133);
+		this.add.existing(cardPrefab_7);
+
+		// cardPrefab_8
+		const cardPrefab_8 = new CardPrefab(this, 747, 313);
+		this.add.existing(cardPrefab_8);
+
+		// cardPrefab_9
+		const cardPrefab_9 = new CardPrefab(this, 747, 133);
+		this.add.existing(cardPrefab_9);
+
+		// cardPrefab_10
+		const cardPrefab_10 = new CardPrefab(this, 147, 313);
+		this.add.existing(cardPrefab_10);
+
+		// cardPrefab_11
+		const cardPrefab_11 = new CardPrefab(this, 347, 313);
+		this.add.existing(cardPrefab_11);
 
 		// gamePlay
 		const gamePlay = new GamePlay(this);
 
 		// lists
-		const cards = [cardPrefab_2, cardPrefab_1, cardPrefab_3, cardPrefab_4];
+		const cards = [cardPrefab_2, cardPrefab_1, cardPrefab_3, cardPrefab_4, cardPrefab_10, cardPrefab_9, cardPrefab_8, cardPrefab_7, cardPrefab_6, cardPrefab_5, cardPrefab_11, cardPrefab_12];
 
 		// cardPrefab_1 (prefab fields)
 		cardPrefab_1.cardFrontTextureConfig = {"key":"spritesheet","frame":"Bat.png"};
@@ -59,6 +91,30 @@ export default class Level extends Phaser.Scene {
 
 		// cardPrefab_4 (prefab fields)
 		cardPrefab_4.cardFrontTextureConfig = {"key":"spritesheet","frame":"Cadle.png"};
+
+		// cardPrefab_5 (prefab fields)
+		cardPrefab_5.cardFrontTextureConfig = {"key":"spritesheet","frame":"Cat.png"};
+
+		// cardPrefab_6 (prefab fields)
+		cardPrefab_6.cardFrontTextureConfig = {"key":"spritesheet","frame":"Cat.png"};
+
+		// cardPrefab_12 (prefab fields)
+		cardPrefab_12.cardFrontTextureConfig = {"key":"spritesheet","frame":"Skull.png"};
+
+		// cardPrefab_7 (prefab fields)
+		cardPrefab_7.cardFrontTextureConfig = {"key":"spritesheet","frame":"Pumpkin.png"};
+
+		// cardPrefab_8 (prefab fields)
+		cardPrefab_8.cardFrontTextureConfig = {"key":"spritesheet","frame":"Pumpkin.png"};
+
+		// cardPrefab_9 (prefab fields)
+		cardPrefab_9.cardFrontTextureConfig = {"key":"spritesheet","frame":"Candy.png"};
+
+		// cardPrefab_10 (prefab fields)
+		cardPrefab_10.cardFrontTextureConfig = {"key":"spritesheet","frame":"Candy.png"};
+
+		// cardPrefab_11 (prefab fields)
+		cardPrefab_11.cardFrontTextureConfig = {"key":"spritesheet","frame":"Skull.png"};
 
 		// gamePlay (prefab fields)
 		gamePlay.cards = cards;

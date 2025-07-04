@@ -61,16 +61,27 @@ export default class GamePlay extends ScriptNode {
          ease: Phaser.Math.Easing.Sine.InOut,
          onComplete: () => {
             this.cards.forEach((card, index) => {
-            const row = Math.floor(index/4);
-            const col = index % 4;
-            const x = (160 + col * 320);
-            const y = (120 + row * 240);
-            card.name = index;
-            card.setPosition(x,y);
-       })
-
+               const row = Math.floor(index/4);
+               const col = index % 4;
+               const x = (160 + col * 320) - 640;
+               const y = (120 + row * 240) - 360;
+               card.name = index;
+               //card.setPosition(x,y);
+               this.moveCard(card,x,y,index);
+            })
          }
        })
+   }
+
+   moveCard(card, x, y, index) {
+       this.scene.tweens.add({
+         targets: card,
+         x,
+         y,
+         duration: 200,
+         delay: 200 * index,
+         ease: Phaser.Math.Easing.Sine.InOut,
+       })   
    }
 
    checkForMatch(firstCard, secondCard) {

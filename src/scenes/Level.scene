@@ -186,10 +186,12 @@
             "prefabId": "baf62999-5c89-43f5-a659-1abf162fda30",
             "id": "7fc16294-6dbf-48f6-a330-06d0f988f52b",
             "unlock": [
-                "cards"
+                "cards",
+                "cardContainer"
             ],
             "label": "gamePlay",
-            "cards": "cards"
+            "cards": "cards",
+            "cardContainer": "cardContainer"
         }
     ],
     "plainObjects": [],

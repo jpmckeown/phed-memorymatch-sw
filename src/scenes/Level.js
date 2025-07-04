@@ -121,6 +121,7 @@ export default class Level extends Phaser.Scene {
 
 		// gamePlay (prefab fields)
 		gamePlay.cards = cards;
+		gamePlay.cardContainer = cardContainer;
 
 		this.cards = cards;
 

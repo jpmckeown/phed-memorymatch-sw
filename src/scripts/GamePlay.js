@@ -20,6 +20,8 @@ export default class GamePlay extends ScriptNode {
 
 	/** @type {CardPrefab[]} */
 	cards = [];
+	/** @type {Phaser.GameObjects.GameObject} */
+	cardContainer;
 
 	/* START-USER-CODE */
 
@@ -40,7 +42,7 @@ export default class GamePlay extends ScriptNode {
          howToCheckForMatch: (firstCard , secondCard) => { return this.checkForMatch(firstCard, secondCard); },
          //howToShuffle: (cards) => {}
       });
-       
+
       this.scene.events.on('card-clicked', (card) => {
          console.log(card);
          this.memoryMatch.flipCard(card.name);
@@ -51,13 +53,23 @@ export default class GamePlay extends ScriptNode {
    }
 
    dealCards() {
-       this.cards.forEach((card, index) => {
-         const row = Math.floor(index/4);
-         const col = index % 4;
-         const x = (160 + col * 320);
-         const y = (120 + row * 240);
-         card.name = index;
-         card.setPosition(x,y);
+       this.cardContainer.setY(1000);
+       this.scene.tweens.add({
+         targets: this.cardContainer,
+         y: 360,
+         duration: 1000,
+         ease: Phaser.Math.Easing.Sine.InOut,
+         onComplete: () => {
+            this.cards.forEach((card, index) => {
+            const row = Math.floor(index/4);
+            const col = index % 4;
+            const x = (160 + col * 320);
+            const y = (120 + row * 240);
+            card.name = index;
+            card.setPosition(x,y);
+       })
+
+         }
        })
    }
 

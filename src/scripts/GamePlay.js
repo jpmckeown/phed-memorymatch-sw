@@ -38,14 +38,27 @@ export default class GamePlay extends ScriptNode {
          onMismatchCallback: (firstIndex, secondIndex) => { this.onMismatchCallback(firstIndex, secondIndex); },
          onGameOverCallback: () => { this.onGameOverCallback(); },
          howToCheckForMatch: (firstCard , secondCard) => { return this.checkForMatch(firstCard, secondCard); },
-         howToShuffle: (cards) => {}
+         //howToShuffle: (cards) => {}
       });
        
       this.scene.events.on('card-clicked', (card) => {
          console.log(card);
          this.memoryMatch.flipCard(card.name);
       })
+
+      this.dealCards();
       //console.log(this.memoryMatch.cards)
+   }
+
+   dealCards() {
+       this.cards.forEach((card, index) => {
+         const row = Math.floor(index/4);
+         const col = index % 4;
+         const x = (160 + col * 320);
+         const y = (120 + row * 240);
+         card.name = index;
+         card.setPosition(x,y);
+       })
    }
 
    checkForMatch(firstCard, secondCard) {

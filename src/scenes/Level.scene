@@ -183,6 +183,45 @@
             ]
         },
         {
+            "type": "Image",
+            "id": "8b58eafb-d67d-4839-b59e-cc83b00e9329",
+            "label": "nice",
+            "texture": {
+                "key": "nice"
+            },
+            "x": 640,
+            "y": 360
+        },
+        {
+            "type": "Image",
+            "id": "c967f633-af13-4dd3-94b2-a1a6109036e9",
+            "label": "clickToPlayAgain",
+            "texture": {
+                "key": "clickToPlayAgain"
+            },
+            "x": 640,
+            "y": 830,
+            "list": [
+                {
+                    "prefabId": "45946cf1-e167-4a9f-ada0-2fe5b749f28c",
+                    "id": "7e539d25-1484-4e03-ace8-8db20a9def24",
+                    "unlock": [
+                        "to",
+                        "from",
+                        "property",
+                        "autoExecute",
+                        "delay"
+                    ],
+                    "label": "animationConfigBase",
+                    "to": 628,
+                    "from": 830,
+                    "property": "y",
+                    "autoExecute": true,
+                    "delay": 2000
+                }
+            ]
+        },
+        {
             "prefabId": "baf62999-5c89-43f5-a659-1abf162fda30",
             "id": "7fc16294-6dbf-48f6-a330-06d0f988f52b",
             "unlock": [

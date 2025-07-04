@@ -5,6 +5,7 @@
 
 import BackgroundPrefab from "../prefabs/BackgroundPrefab.js";
 import CardPrefab from "../prefabs/CardPrefab.js";
+import AnimationConfigBase from "../scripts/scriptnodes/AnimationConfigBase.js";
 import GamePlay from "../scripts/GamePlay.js";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -77,6 +78,15 @@ export default class Level extends Phaser.Scene {
 		const cardPrefab_11 = new CardPrefab(this, 0, 0);
 		cardContainer.add(cardPrefab_11);
 
+		// nice
+		this.add.image(640, 360, "nice");
+
+		// clickToPlayAgain
+		const clickToPlayAgain = this.add.image(640, 830, "clickToPlayAgain");
+
+		// animationConfigBase
+		const animationConfigBase = new AnimationConfigBase(clickToPlayAgain);
+
 		// gamePlay
 		const gamePlay = new GamePlay(this);
 
@@ -118,6 +128,13 @@ export default class Level extends Phaser.Scene {
 
 		// cardPrefab_11 (prefab fields)
 		cardPrefab_11.cardFrontTextureConfig = {"key":"spritesheet","frame":"Skull.png"};
+
+		// animationConfigBase (prefab fields)
+		animationConfigBase.to = 628;
+		animationConfigBase.from = 830;
+		animationConfigBase.property = "y";
+		animationConfigBase.autoExecute = true;
+		animationConfigBase.delay = 2000;
 
 		// gamePlay (prefab fields)
 		gamePlay.cards = cards;

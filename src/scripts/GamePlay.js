@@ -27,8 +27,10 @@ export default class GamePlay extends ScriptNode {
 
 	// Write your code here.
    memoryMatch;
+   lockInput = true;
+
    awake() {
-      console.log('awake', this.parent);
+      this.lockInput = true;
       this.cards.forEach((card, index) => {
          card.name = index;
       });
@@ -39,17 +41,14 @@ export default class GamePlay extends ScriptNode {
          onMatchCallback: (firstIndex, secondIndex) => { this.onMatchCallback(firstIndex, secondIndex); },
          onMismatchCallback: (firstIndex, secondIndex) => { this.onMismatchCallback(firstIndex, secondIndex); },
          onGameOverCallback: () => { this.onGameOverCallback(); },
-         howToCheckForMatch: (firstCard , secondCard) => { return this.checkForMatch(firstCard, secondCard); },
-         //howToShuffle: (cards) => {}
+         howToCheckForMatch: (firstCard , secondCard) => { return this.checkForMatch(firstCard, secondCard); }
       });
 
       this.scene.events.on('card-clicked', (card) => {
-         console.log(card);
+         if (this.lockInput) { return; }
          this.memoryMatch.flipCard(card.name);
       })
-
       this.dealCards();
-      //console.log(this.memoryMatch.cards)
    }
 
    dealCards() {
@@ -68,9 +67,12 @@ export default class GamePlay extends ScriptNode {
                card.name = index;
                //card.setPosition(x,y);
                this.moveCard(card,x,y,index);
-            })
+            });
          }
-       })
+       });
+       this.scene.time.delayedCall(3400, () => { // 2000 + 12 * 200, pack + deal
+          this.lockInput = false;
+       }); 
    }
 
    moveCard(card, x, y, index) {
@@ -99,10 +101,12 @@ export default class GamePlay extends ScriptNode {
    }
 
    onMismatchCallback(firstIndex, secondIndex) {
+      this.lockInput = true;
       console.log(`Mismatch: ${firstIndex}, ${secondIndex}`);
       this.scene.time.delayedCall(1000, () => {
          this.cards[firstIndex].flip();
          this.cards[secondIndex].flip();
+         this.lockInput = false;
       });
    }
    onGameOverCallback() {

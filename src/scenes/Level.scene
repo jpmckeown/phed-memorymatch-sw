@@ -190,7 +190,67 @@
                 "key": "nice"
             },
             "x": 640,
-            "y": 360
+            "y": 360,
+            "list": [
+                {
+                    "prefabId": "45946cf1-e167-4a9f-ada0-2fe5b749f28c",
+                    "id": "6178e6be-5355-429c-a0c7-49da88eccce3",
+                    "unlock": [
+                        "to",
+                        "property",
+                        "duration",
+                        "autoExecute"
+                    ],
+                    "label": "animationConfigBase_1",
+                    "to": 1.2,
+                    "duration": 2000,
+                    "property": "scale",
+                    "autoExecute": true,
+                    "list": [
+                        {
+                            "prefabId": "3d0f9437-ede2-4a64-86fb-d4956574496b",
+                            "id": "7d6f2e06-d0f0-46cb-b56a-6f51d51bfb86",
+                            "label": "sceneClickHandler",
+                            "list": [
+                                {
+                                    "prefabId": "45946cf1-e167-4a9f-ada0-2fe5b749f28c",
+                                    "id": "9cd9751f-9c21-4c73-a252-12719dc16ba7",
+                                    "unlock": [
+                                        "to",
+                                        "from",
+                                        "target",
+                                        "duration",
+                                        "property"
+                                    ],
+                                    "label": "animationConfigBase_2",
+                                    "to": -100,
+                                    "from": 380,
+                                    "duration": 800,
+                                    "property": "y",
+                                    "target": "nice"
+                                },
+                                {
+                                    "prefabId": "45946cf1-e167-4a9f-ada0-2fe5b749f28c",
+                                    "id": "668e106c-55c9-47c7-9976-310809ef8676",
+                                    "unlock": [
+                                        "target",
+                                        "to",
+                                        "from",
+                                        "duration",
+                                        "property"
+                                    ],
+                                    "label": "animationConfigBase_3",
+                                    "to": 1200,
+                                    "from": 628,
+                                    "duration": 800,
+                                    "property": "y",
+                                    "target": "clickToPlayAgain"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             "type": "Image",
@@ -209,14 +269,12 @@
                         "to",
                         "from",
                         "property",
-                        "autoExecute",
                         "delay"
                     ],
                     "label": "animationConfigBase",
                     "to": 628,
                     "from": 830,
                     "property": "y",
-                    "autoExecute": true,
                     "delay": 2000
                 }
             ]

@@ -6,6 +6,7 @@
 import BackgroundPrefab from "../prefabs/BackgroundPrefab.js";
 import CardPrefab from "../prefabs/CardPrefab.js";
 import AnimationConfigBase from "../scripts/scriptnodes/AnimationConfigBase.js";
+import SceneClickHandler from "../scripts/scriptnodes/SceneClickHandler.js";
 import GamePlay from "../scripts/GamePlay.js";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -79,7 +80,19 @@ export default class Level extends Phaser.Scene {
 		cardContainer.add(cardPrefab_11);
 
 		// nice
-		this.add.image(640, 360, "nice");
+		const nice = this.add.image(640, 360, "nice");
+
+		// animationConfigBase_1
+		const animationConfigBase_1 = new AnimationConfigBase(nice);
+
+		// sceneClickHandler
+		const sceneClickHandler = new SceneClickHandler(animationConfigBase_1);
+
+		// animationConfigBase_2
+		const animationConfigBase_2 = new AnimationConfigBase(sceneClickHandler);
+
+		// animationConfigBase_3
+		const animationConfigBase_3 = new AnimationConfigBase(sceneClickHandler);
 
 		// clickToPlayAgain
 		const clickToPlayAgain = this.add.image(640, 830, "clickToPlayAgain");
@@ -129,11 +142,30 @@ export default class Level extends Phaser.Scene {
 		// cardPrefab_11 (prefab fields)
 		cardPrefab_11.cardFrontTextureConfig = {"key":"spritesheet","frame":"Skull.png"};
 
+		// animationConfigBase_1 (prefab fields)
+		animationConfigBase_1.to = 1.2;
+		animationConfigBase_1.duration = 2000;
+		animationConfigBase_1.property = "scale";
+		animationConfigBase_1.autoExecute = true;
+
+		// animationConfigBase_2 (prefab fields)
+		animationConfigBase_2.to = -100;
+		animationConfigBase_2.from = 380;
+		animationConfigBase_2.duration = 800;
+		animationConfigBase_2.property = "y";
+		animationConfigBase_2.target = nice;
+
+		// animationConfigBase_3 (prefab fields)
+		animationConfigBase_3.to = 1200;
+		animationConfigBase_3.from = 628;
+		animationConfigBase_3.duration = 800;
+		animationConfigBase_3.property = "y";
+		animationConfigBase_3.target = clickToPlayAgain;
+
 		// animationConfigBase (prefab fields)
 		animationConfigBase.to = 628;
 		animationConfigBase.from = 830;
 		animationConfigBase.property = "y";
-		animationConfigBase.autoExecute = true;
 		animationConfigBase.delay = 2000;
 
 		// gamePlay (prefab fields)

@@ -7,6 +7,7 @@ import BackgroundPrefab from "../prefabs/BackgroundPrefab.js";
 import CardPrefab from "../prefabs/CardPrefab.js";
 import AnimationConfigBase from "../scripts/scriptnodes/AnimationConfigBase.js";
 import SceneClickHandler from "../scripts/scriptnodes/SceneClickHandler.js";
+import SceneRestart from "../scripts/scriptnodes/SceneRestart.js";
 import GamePlay from "../scripts/GamePlay.js";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -94,6 +95,12 @@ export default class Level extends Phaser.Scene {
 		// animationConfigBase_3
 		const animationConfigBase_3 = new AnimationConfigBase(sceneClickHandler);
 
+		// animationConfigBase_4
+		const animationConfigBase_4 = new AnimationConfigBase(sceneClickHandler);
+
+		// sceneRestart
+		new SceneRestart(animationConfigBase_4);
+
 		// clickToPlayAgain
 		const clickToPlayAgain = this.add.image(640, 830, "clickToPlayAgain");
 
@@ -105,6 +112,7 @@ export default class Level extends Phaser.Scene {
 
 		// lists
 		const cards = [cardPrefab_2, cardPrefab_1, cardPrefab_3, cardPrefab_4, cardPrefab_10, cardPrefab_9, cardPrefab_8, cardPrefab_7, cardPrefab_6, cardPrefab_5, cardPrefab_11, cardPrefab_12];
+		const gameOverScriptNodes = [animationConfigBase, animationConfigBase_1];
 
 		// cardPrefab_1 (prefab fields)
 		cardPrefab_1.cardFrontTextureConfig = {"key":"spritesheet","frame":"Bat.png"};
@@ -162,6 +170,12 @@ export default class Level extends Phaser.Scene {
 		animationConfigBase_3.property = "y";
 		animationConfigBase_3.target = clickToPlayAgain;
 
+		// animationConfigBase_4 (prefab fields)
+		animationConfigBase_4.to = 1200;
+		animationConfigBase_4.from = 360;
+		animationConfigBase_4.property = "y";
+		animationConfigBase_4.target = cardContainer;
+
 		// animationConfigBase (prefab fields)
 		animationConfigBase.to = 628;
 		animationConfigBase.from = 830;
@@ -171,14 +185,18 @@ export default class Level extends Phaser.Scene {
 		// gamePlay (prefab fields)
 		gamePlay.cards = cards;
 		gamePlay.cardContainer = cardContainer;
+		gamePlay.gameOverScriptNodes = [];
 
 		this.cards = cards;
+		this.gameOverScriptNodes = gameOverScriptNodes;
 
 		this.events.emit("scene-awake");
 	}
 
 	/** @type {CardPrefab[]} */
 	cards;
+	/** @type {AnimationConfigBase[]} */
+	gameOverScriptNodes;
 
 	/* START-USER-CODE */
 

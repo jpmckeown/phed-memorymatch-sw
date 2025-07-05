@@ -22,6 +22,8 @@ export default class GamePlay extends ScriptNode {
 	cards = [];
 	/** @type {Phaser.GameObjects.GameObject} */
 	cardContainer;
+	/** @type {ScriptNode[]} */
+	gameOverScriptNodes = [];
 
 	/* START-USER-CODE */
 
@@ -41,7 +43,8 @@ export default class GamePlay extends ScriptNode {
          onMatchCallback: (firstIndex, secondIndex) => { this.onMatchCallback(firstIndex, secondIndex); },
          onMismatchCallback: (firstIndex, secondIndex) => { this.onMismatchCallback(firstIndex, secondIndex); },
          onGameOverCallback: () => { this.onGameOverCallback(); },
-         howToCheckForMatch: (firstCard , secondCard) => { return this.checkForMatch(firstCard, secondCard); }
+         howToCheckForMatch: (firstCard , secondCard) => { return this.checkForMatch(firstCard, secondCard); },
+         howToShuffle: (cards) => {}, // testing without shuffle
       });
 
       this.scene.events.on('card-clicked', (card) => {
@@ -110,7 +113,10 @@ export default class GamePlay extends ScriptNode {
       });
    }
    onGameOverCallback() {
-      console.log('Game Over! All cards matched!'); 
+      console.log('Game Over! All cards matched!');
+      this.gameOverScriptNodes.forEach((scriptNode) => {
+         scriptNode.execute();
+      })
    }
 	/* END-USER-CODE */
 }

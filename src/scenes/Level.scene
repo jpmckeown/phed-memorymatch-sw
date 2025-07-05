@@ -245,6 +245,28 @@
                                     "duration": 800,
                                     "property": "y",
                                     "target": "clickToPlayAgain"
+                                },
+                                {
+                                    "prefabId": "45946cf1-e167-4a9f-ada0-2fe5b749f28c",
+                                    "id": "4f0a079e-a5f0-4302-8c0f-171511433c70",
+                                    "unlock": [
+                                        "target",
+                                        "to",
+                                        "from",
+                                        "property"
+                                    ],
+                                    "label": "animationConfigBase_4",
+                                    "to": 1200,
+                                    "from": 360,
+                                    "property": "y",
+                                    "target": "cardContainer",
+                                    "list": [
+                                        {
+                                            "prefabId": "a64a709f-04f5-4972-a235-fca2a79f1c39",
+                                            "id": "0882c49c-4467-4951-b8fe-0fae6ee854a8",
+                                            "label": "sceneRestart"
+                                        }
+                                    ]
                                 }
                             ]
                         }
@@ -284,11 +306,13 @@
             "id": "7fc16294-6dbf-48f6-a330-06d0f988f52b",
             "unlock": [
                 "cards",
-                "cardContainer"
+                "cardContainer",
+                "gameOverScriptNodes"
             ],
             "label": "gamePlay",
             "cards": "cards",
-            "cardContainer": "cardContainer"
+            "cardContainer": "cardContainer",
+            "gameOverScriptNodes": "[]"
         }
     ],
     "plainObjects": [],
@@ -315,6 +339,14 @@
                 "06fc8901-82f6-419a-803f-50c12fe284ac",
                 "5d5c303b-da55-45f2-9cb8-91ae73aa4c4a",
                 "ce3aa74c-8b71-437a-b207-90eb092cba30"
+            ]
+        },
+        {
+            "id": "7c62b07d-4658-4a96-b853-766741522144",
+            "label": "gameOverScriptNodes",
+            "objectIds": [
+                "7e539d25-1484-4e03-ace8-8db20a9def24",
+                "6178e6be-5355-429c-a0c7-49da88eccce3"
             ]
         }
     ]

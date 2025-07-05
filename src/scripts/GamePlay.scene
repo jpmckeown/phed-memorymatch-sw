@@ -47,6 +47,17 @@
                 "id": "object-var",
                 "expressionType": "Phaser.GameObjects.GameObject"
             }
+        },
+        {
+            "name": "gameOverScriptNodes",
+            "label": "gameOver Script Nodes",
+            "tooltip": "",
+            "defValue": "[]",
+            "customDefinition": false,
+            "type": {
+                "id": "constructor",
+                "expressionType": "ScriptNode[]"
+            }
         }
     ]
 }

@@ -82,6 +82,8 @@ export default class Level extends Phaser.Scene {
 
 		// nice
 		const nice = this.add.image(640, 360, "nice");
+		nice.scaleX = 0;
+		nice.scaleY = 0;
 
 		// animationConfigBase_1
 		const animationConfigBase_1 = new AnimationConfigBase(nice);
@@ -154,7 +156,7 @@ export default class Level extends Phaser.Scene {
 		animationConfigBase_1.to = 1.2;
 		animationConfigBase_1.duration = 2000;
 		animationConfigBase_1.property = "scale";
-		animationConfigBase_1.autoExecute = true;
+		animationConfigBase_1.autoExecute = false;
 
 		// animationConfigBase_2 (prefab fields)
 		animationConfigBase_2.to = -100;
@@ -185,7 +187,7 @@ export default class Level extends Phaser.Scene {
 		// gamePlay (prefab fields)
 		gamePlay.cards = cards;
 		gamePlay.cardContainer = cardContainer;
-		gamePlay.gameOverScriptNodes = [];
+		gamePlay.gameOverScriptNodes = gameOverScriptNodes;
 
 		this.cards = cards;
 		this.gameOverScriptNodes = gameOverScriptNodes;
